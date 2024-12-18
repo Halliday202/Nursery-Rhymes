@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursery Rhymes - Kids Songs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #ffcccb;
+            padding: 20px 0;
+        }
+        header h1 {
+            text-align: center;
+            color: #333;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .hero {
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .video-gallery, .character-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .video-item, .character-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            width: 200px;
+            transition: transform 0.3s;
+        }
+        .video-item img, .character-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .video-item:hover, .character-item:hover {
+            transform: scale(1.1);
+        }
+        .character-gallery {
+            animation: slideIn 1.5s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+        footer {
+            background-color: #ffcccb;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Nursery Rhymes - Kids Songs</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#characters">Characters</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to the Best Educational Songs and Nursery Rhymes</h2>
+            <p>Explore our collection of 2D animations designed to entertain and educate kids worldwide.</p>
+        </div>
+    </section>
+
+    <section id="videos">
+        <div class="container">
+            <h2>Our Videos</h2>
+            <div class="video-gallery">
+                <div class="video-item">
+                    <a href="baby-shark.html">
+                        <img src="images/baby-shark-thumbnail.jpg" alt="Baby Shark">
+                    </a>
+                    <h3>Baby Shark</h3>
+                    <p>2D Animation - Duration: 0:25</p>
+                </div>
+                <div class="video-item">
+                    <a href="wheels-on-the-bus.html">
+                        <img src="images/wheels-on-the-bus-thumbnail.jpg" alt="Wheels on the Bus">
+                    </a>
+                    <h3>Wheels on the Bus</h3>
+                    <p>2D Animation - Duration: 0:14</p>
+                </div>
+                <div class="video-item">
+                    <a href="twinkle-twinkle.html">
+                        <img src="images/twinkle-twinkle-thumbnail.jpg" alt="Twinkle Twinkle Little Star">
+                    </a>
+                    <h3>Twinkle Twinkle Little Star</h3>
+                    <p>2D Animation - Duration: 0:53</p>
+                </div>
+                <div class="video-item">
+                    <a href="baa-baa-black-sheep.html">
+                        <img src="images/baa-baa-black-sheep-thumbnail.jpg" alt="Baa Baa Black Sheep">
+                    </a>
+                    <h3>Baa Baa Black Sheep</h3>
+                    <p>2D Animation - Duration: 0:26</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="characters">
+        <div class="container">
+            <h2>Meet Our Characters</h2>
+            <div class="character-gallery">
+                <div class="character-item">
+                    <img src="images/baby-character.png" alt="Baby">
+                    <h3>Baby Shark</h3>
+                </div>
+                <div class="character-item">
+                    <img src="images/brother-character.png" alt="Brother">
+                    <h3>Brother</h3>
+                </div>
+                <div class="character-item">
+                    <img src="images/star-character.png" alt="Star">
+                    <h3>Star</h3>
+                </div>
+                <div class="character-item">
+                    <img src="images/sheep-character.png" alt="Sheep">
+                    <h3>Sheep</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Where can I find your music?</h3>
+                <p>Our songs are available on YouTube, Spotify, and other music platforms.</p>
+            </div>
+            <!-- Add more FAQ items here -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nursery Rhymes - Kids Songs. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

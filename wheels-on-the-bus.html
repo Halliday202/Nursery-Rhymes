@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheels on the Bus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e0f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #00796b;
+            margin-top: 20px;
+        }
+        .video-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .thumbnail {
+            width: 200px;
+            cursor: pointer;
+        }
+        .lyrics {
+            font-size: 20px;
+            color: #333;
+            display: none;
+            margin-top: 20px;
+            line-height: 1.5;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .lyrics p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wheels on the Bus</h1>
+    <div class="video-container">
+        <video id="videoPlayer" width="640" height="360" controls style="display:none;">
+            <source src="videos/wheels-on-the-bus.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="lyrics" class="lyrics">
+            <p id="lyric1" style="display:none;">The wheels on the bus go round and round</p>
+            <p id="lyric2" style="display:none;">Round and round, round and round</p>
+            <p id="lyric3" style="display:none;">The wheels on the bus go round and round</p>
+            <p id="lyric4" style="display:none;">All day long</p>
+        </div>
+        <img src="images/wheels-on-the-bus-thumbnail.jpg" alt="Wheels on the Bus Thumbnail" class="thumbnail" onclick="playVideo()">
+    </div>
+
+    <script>
+        function playVideo() {
+            document.querySelector('.thumbnail').style.display = 'none';
+            document.getElementById('videoPlayer').style.display = 'block';
+            document.getElementById('videoPlayer').play();
+            document.getElementById('lyrics').style.display = 'block';
+            showLyrics();
+        }
+
+        function showLyrics() {
+            const lyrics = [
+                { time: 0, lyric: 'lyric1' },
+                { time: 4, lyric: 'lyric2' },
+                { time: 8, lyric: 'lyric3' },
+                { time: 12, lyric: 'lyric4' }
+            ];
+
+            lyrics.forEach(function(item) {
+                setTimeout(function() {
+                    document.getElementById(item.lyric).style.display = 'block';
+                }, item.time * 1000);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baa Baa Black Sheep</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0e68c;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #8b4513;
+            margin-top: 20px;
+        }
+        .video-container {
+            margin-top: 20px;
+        }
+        .lyrics {
+            font-size: 18px;
+            color: #333;
+            display: none;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+        .lyrics p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Baa Baa Black Sheep</h1>
+    <div class="video-container">
+        <video id="baaVideo" width="640" height="360" controls>
+            <source src="videos/baa-baa-black-sheep.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="baaLyrics" class="lyrics">
+            <p id="baa1">Baa, baa, black sheep,</p>
+            <p id="baa2">Have you any wool?</p>
+            <p id="baa3">Yes sir, yes sir,</p>
+            <p id="baa4">Three bags full.</p>
+            <p id="baa5">One for the master,</p>
+            <p id="baa6">One for the dame,</p>
+            <p id="baa7">And one for the little boy</p>
+            <p id="baa8">Who lives down the lane.</p>
+        </div>
+    </div>
+
+    <script>
+        const baaLyrics = [
+            { time: 0, id: "baa1" },
+            { time: 4, id: "baa2" },
+            { time: 8, id: "baa3" },
+            { time: 12, id: "baa4" },
+            { time: 16, id: "baa5" },
+            { time: 20, id: "baa6" },
+            { time: 23, id: "baa7" },
+            { time: 25, id: "baa8" },
+        ];
+
+        const baaVideo = document.getElementById("baaVideo");
+        const baaLyricsDiv = document.getElementById("baaLyrics");
+
+        baaVideo.addEventListener("play", () => {
+            baaLyricsDiv.style.display = "block";
+            baaLyrics.forEach(lyric => {
+                setTimeout(() => {
+                    document.getElementById(lyric.id).style.display = "block";
+                }, lyric.time * 1000);
+            });
+        });
+    </script>
+</body>
+</html>
