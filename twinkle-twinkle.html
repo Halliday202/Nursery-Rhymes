@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twinkle Twinkle Little Star</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #4682b4;
+            margin-top: 20px;
+        }
+        .video-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .thumbnail {
+            width: 200px;
+            cursor: pointer;
+        }
+        .lyrics {
+            font-size: 20px;
+            color: #333;
+            display: none;
+            margin-top: 20px;
+            line-height: 1.5;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .lyrics p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Twinkle Twinkle Little Star</h1>
+    <div class="video-container">
+        <video id="videoPlayer" width="640" height="360" controls style="display:none;">
+            <source src="videos/twinkle-twinkle.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="lyrics" class="lyrics">
+            <p id="lyric1" style="display:none;">Twinkle, twinkle, little star,</p>
+            <p id="lyric2" style="display:none;">How I wonder what you are!</p>
+            <p id="lyric3" style="display:none;">Up above the world so high,</p>
+            <p id="lyric4" style="display:none;">Like a diamond in the sky.</p>
+            <p id="lyric5" style="display:none;">Twinkle, twinkle, little star,</p>
+            <p id="lyric6" style="display:none;">How I wonder what you are!</p>
+            <p id="lyric7" style="display:none;">Twinkle, twinkle, little star,</p>
+            <p id="lyric8" style="display:none;">How I wonder what you are!</p>
+        </div>
+        <img src="images/twinkle-twinkle-thumbnail.jpg" alt="Twinkle Twinkle Thumbnail" class="thumbnail" onclick="playVideo()">
+    </div>
+
+    <script>
+        function playVideo() {
+            document.querySelector('.thumbnail').style.display = 'none';
+            document.getElementById('videoPlayer').style.display = 'block';
+            document.getElementById('videoPlayer').play();
+            document.getElementById('lyrics').style.display = 'block';
+            showLyrics();
+        }
+
+        function showLyrics() {
+            const lyrics = [
+                { time: 0, lyric: 'lyric1' },
+                { time: 5, lyric: 'lyric2' },
+                { time: 10, lyric: 'lyric3' },
+                { time: 15, lyric: 'lyric4' },
+                { time: 20, lyric: 'lyric5' },
+                { time: 25, lyric: 'lyric6' },
+                { time: 30, lyric: 'lyric7' },
+                { time: 35, lyric: 'lyric8' }
+            ];
+
+            lyrics.forEach(function(item) {
+                setTimeout(function() {
+                    document.getElementById(item.lyric).style.display = 'block';
+                }, item.time * 1000);
+            });
+        }
+    </script>
+</body>
+</html>

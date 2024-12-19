@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baa Baa Black Sheep</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #4682b4;
+            margin-top: 20px;
+        }
+        .video-container {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .thumbnail {
+            width: 200px;
+            cursor: pointer;
+        }
+        .lyrics {
+            font-size: 20px;
+            color: #333;
+            display: none;
+            margin-top: 20px;
+            line-height: 1.5;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .lyrics p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Baa Baa Black Sheep</h1>
+    <div class="video-container">
+        <video id="videoPlayer" width="640" height="360" controls style="display:none;">
+            <source src="videos/baa-baa-black-sheep.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="lyrics" class="lyrics">
+            <p id="lyric1" style="display:none;">Baa, baa, black sheep,</p>
+            <p id="lyric2" style="display:none;">Have you any wool?</p>
+            <p id="lyric3" style="display:none;">Yes sir, yes sir,</p>
+            <p id="lyric4" style="display:none;">Three bags full.</p>
+            <p id="lyric5" style="display:none;">One for the master,</p>
+            <p id="lyric6" style="display:none;">One for the dame,</p>
+            <p id="lyric7" style="display:none;">And one for the little boy</p>
+            <p id="lyric8" style="display:none;">Who lives down the lane.</p>
+            <p id="lyric9" style="display:none;">Baa, baa, black sheep,</p>
+            <p id="lyric10" style="display:none;">Have you any wool?</p>
+            <p id="lyric11" style="display:none;">Yes sir, yes sir,</p>
+            <p id="lyric12" style="display:none;">Three bags full.</p>
+        </div>
+        <img src="images/baa-baa-black-sheep-thumbnail.jpg" alt="Baa Baa Black Sheep Thumbnail" class="thumbnail" onclick="playVideo()">
+    </div>
+
+    <script>
+        function playVideo() {
+            document.querySelector('.thumbnail').style.display = 'none';
+            document.getElementById('videoPlayer').style.display = 'block';
+            document.getElementById('videoPlayer').play();
+            document.getElementById('lyrics').style.display = 'block';
+            showLyrics();
+        }
+
+        function showLyrics() {
+            const lyrics = [
+                { time: 0, lyric: 'lyric1' },
+                { time: 2, lyric: 'lyric2' },
+                { time: 4, lyric: 'lyric3' },
+                { time: 6, lyric: 'lyric4' },
+                { time: 8, lyric: 'lyric5' },
+                { time: 10, lyric: 'lyric6' },
+                { time: 12, lyric: 'lyric7' },
+                { time: 14, lyric: 'lyric8' },
+                { time: 16, lyric: 'lyric9' },
+                { time: 20, lyric: 'lyric10' },
+                { time: 22, lyric: 'lyric11' },
+                { time: 24, lyric: 'lyric12' }
+            ];
+
+            lyrics.forEach(function(item) {
+                setTimeout(function() {
+                    document.getElementById(item.lyric).style.display = 'block';
+                }, item.time * 1000);
+            });
+        }
+    </script>
+</body>
+</html>
